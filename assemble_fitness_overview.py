@@ -70,5 +70,6 @@ table{border-collapse:collapse;width:100%;font-size:12px}th,td{padding:7px 9px 7
 </main><script id="fitness-data" type="application/json">__DATA__</script><script>__CORE__</script><script>__UI__</script></body></html>'''
 html = html.replace('__DATA__', payload).replace('__CORE__', Path('fitness_core.js').read_text()).replace('__UI__', Path('fitness_ui.js').read_text())
 Path('fitness-overview.html').write_text(html)
+Path('index.html').write_text(html)
 Path('fitness-overview-data.json').write_text(json.dumps(rows, ensure_ascii=False))
 print('Created fitness-overview.html: main chart + three supporting charts; extended explanations under More.')
